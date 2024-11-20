@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Store Weiterleitung</title>
+    <script>
+        // Funktion zur Erkennung des Betriebssystems
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Prüfen, ob der Benutzer ein iOS- oder Android-Gerät verwendet
+            if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                // Weiterleitung zum iOS App Store
+                window.location.href = "https://apps.apple.com/de/app/deine-app-id"; // Ersetze "deine-app-id" durch die tatsächliche ID
+            } else if (/android/i.test(userAgent)) {
+                // Weiterleitung zum Google Play Store
+                window.location.href = "https://play.google.com/store/apps/details?id=com.deine.app"; // Ersetze mit dem tatsächlichen Paketnamen
+            } else {
+                // Optional: Benutzer benachrichtigen, falls das Gerät nicht erkannt wird
+                alert("Nicht unterstütztes Gerät. Besuchen Sie den Store direkt.");
+            }
+        }
+
+        // Aufruf der Funktion beim Laden der Seite
+        window.onload = redirectToStore;
+    </script>
+</head>
+<body>
+    <h1>Redirecting to your app...</h1>
+    <p>Falls Sie nicht weitergeleitet werden, klicken Sie bitte <a href="https://play.google.com/store/apps/details?id=com.deine.app">hier für Android</a> oder <a href="https://apps.apple.com/de/app/deine-app-id">hier für iOS</a>.</p>
+</body>
+</html>
