@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Store Weiterleitung</title>
+    <title>Highstore App Download</title>
+	<link rel="icon" href="favicon.png" type="image/x-icon">
     <script>
         // Funktion zur Erkennung des Betriebssystems
         function redirectToStore() {
@@ -25,9 +27,89 @@
         // Aufruf der Funktion beim Laden der Seite
         window.onload = redirectToStore;
     </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .store-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .android-button {
+            background-color: #3DDC84;
+            color: white;
+        }
+
+        .android-button:hover {
+            background-color: #32C476;
+        }
+
+        .ios-button {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .ios-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Weiterleitung zur app...</h1>
-    <p>Falls du nicht weitergeleitet wirst, klicke bitte <a href="https://play.google.com/store/apps/details?id=com.deine.app">hier für Android</a> oder <a href="https://apps.apple.com/de/app/deine-app-id">hier für iOS</a>.</p>
+    <h1>Weiterleitung zur Highstore App...</h1>
+    <p>Falls du nicht automatisch weitergeleitet wirst, wähle dein Betriebssystem:</p>
+    <div class="button-container">
+        <a href="https://play.google.com/store/apps/details?id=com.deine.app">
+            <button class="store-button android-button">Android</button>
+        </a>
+        <a href="https://apps.apple.com/de/app/deine-app-id">
+            <button class="store-button ios-button">iOS</button>
+        </a>
+    </div>
 </body>
+
 </html>
